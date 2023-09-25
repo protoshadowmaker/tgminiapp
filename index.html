@@ -4,44 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <title>Mini App Sample</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="viewport"
-	      content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"/>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=no">
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script src="game.js"></script>
+
+    <style>
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            height: 10%;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: calc(10% - 20px);
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section>
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </section>
-
-        <section>
-            <h2>Our Services</h2>
-            <ul>
-                <li>Service 1</li>
-                <li>Service 2</li>
-                <li>Service 3</li>
-            </ul>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 My Website</p>
-    </footer>
+    <h1>Welcome to My Website</h1>
+    <div id="content" class="card-container">
+        
+    </div>
+    <button id="addCardButton" onclick="addNextCard()">Add Card</button>
 </body>
 
 </html>
