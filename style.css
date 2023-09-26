@@ -1,0 +1,14 @@
+.card-container {
+    display: flex;
+    justify-content: center;
+    height: 350px;
+}
+
+.card {
+    border: 1px solid #cdd6c3;
+    background-color: #a1bb82;
+    padding: 20px;
+    width: 250px;
+    height: 350px;
+    text-align: center;
+}

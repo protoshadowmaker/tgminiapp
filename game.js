@@ -1,4 +1,4 @@
-let cardsCount = 0;
+"use strict";
 
 window.onload = function() {
     
@@ -20,23 +20,23 @@ function renderCards() {
 
 }
 
-function appendToElement(elementId, data) {
-    document.getElementById(elementId).innerHTML += data;
-}
-
-function replaceInElement(elementId, data) {
-    document.getElementById(elementId).innerHTML = data;
-}
-
-function cardView(number) {
-    return `
-    <div class="card">
-        <h2>Card ${number}</h2>
-        <p>This is the content of Card ${number}.</p>
-    </div>
-    `;
-}
 
 function addNextCard() {
-    appendToElement("content", cardView(++cardsCount));
+    let cards = document.getElementsByClassName('card');
+    appendToElement("content", cardView(cards.length + 1));
+    updateCardsMargin();
+}
+
+function updateCardsMargin() {
+    let availableWidthForCards = document.getElementById('content').offsetWidth;
+    let cards = document.getElementsByClassName('card');
+    let allCardsSize = cards.length * 250;
+    let cardsMargin = 0;
+    if(cards.length > 1) {
+        let margin = (availableWidthForCards - allCardsSize) / cards.length;
+        cardsMargin = Math.min(50, margin);
+    }
+    for (let i = 1; i < cards.length; i++) {
+        cards[i].style.marginLeft = `${cardsMargin}px`;
+    }
 }
