@@ -1,13 +1,19 @@
 "use strict";
 
-let cardWidth = 250;
-let cardHeight = 350;
-
-function cardView(number) {
+function appItemView(imgUrl, title, description) {
     return `
-    <div class="card">
-        <h2>Card ${number}</h2>
-        <p>This is the content of Card ${number}.</p>
+    <div class="item-app">
+        ${smallRoundedSquareImage(imgUrl)}
+        <div class="item-app-content" style="margin-left: 12px">
+            <div class="text-title-medium">${title}</div>
+            <div class="text-body-medium">${description}</div>
+        </div>
     </div>
     `;
+}
+
+function smallRoundedSquareImage(url) {
+    return `
+    <div class="image image-small image-rounded" style="background-image: url('${url}')"></div>
+    `
 }

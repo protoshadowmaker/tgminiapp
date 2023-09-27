@@ -1,14 +1,64 @@
-.card-container {
-    display: flex;
-    justify-content: center;
-    height: 350px;
+.frame-container {
+    width: 100vw;
+    height: 100vh;
 }
 
-.card {
-    border: 1px solid #cdd6c3;
-    background-color: #a1bb82;
-    padding: 20px;
-    width: 250px;
-    height: 350px;
-    text-align: center;
+.page-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.image {
+    background-size: cover; 
+    background-position: center;
+}
+
+.image-rounded {
+    border-radius: 20%;   
+}
+
+.image-small {
+    width: 30px;
+    height: 30px;
+}
+
+.item-app {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.item-app-content {
+    flex: 1;
+}
+
+.text-title-large {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+.text-title-medium {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+.text-title-small {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.text-body-large {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.text-body-medium {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.text-body-small {
+    font-size: 12px;
+    font-weight: 400;
 }
