@@ -1,5 +1,13 @@
 "use strict";
 
+function pageView(id, content) {
+    return `
+    <div id="${id}" class="page-container">
+        ${content}
+    </div>
+    `;
+}
+
 function appItemView(imgUrl, title, description) {
     return `
     <div class="item-app">
@@ -15,5 +23,5 @@ function appItemView(imgUrl, title, description) {
 function smallRoundedSquareImage(url) {
     return `
     <div class="image image-small image-rounded" style="background-image: url('${url}')"></div>
-    `
+    `;
 }
