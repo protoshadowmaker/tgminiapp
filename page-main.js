@@ -1,33 +1,50 @@
 "use strict";
+let appsList = [];
 
 function displayMainPage() {
     replaceTopPage("main-page", mainPage());
-    displayApps();
+    loadApps("All");
 }
 
 function mainPage() {
     return `
     <h2>Loading page</h2>
     <p>Wait until the data has been loaded.</p>
-    <div id="apps-container">
-    ${appItemView("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/240px-Telegram_logo.svg.png", "Title", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.")}
-    ${appItemView("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/240px-Telegram_logo.svg.png", "Title", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.")}
-    ${appItemView("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/240px-Telegram_logo.svg.png", "Title", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.")}
-    ${appItemView("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/240px-Telegram_logo.svg.png", "Title", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.")}
-    </div>
+    <div id="apps-container"></div>
     `;
 }
 
-function displayApps() {
-    //clear items
+function onAppClicked(element) {
+    const appIndex = parseInt(element.id.split("_")[1]);
+    if(appIndex < appsList.length) {
+        displayAppPage(appsList[appIndex]);
+    }
+}
+
+function displayApps(apps) {
     let displayContent = "";
-    for (let i = 0; i < 100; i++) {
-        displayContent += `\n${appItemView("https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/240px-Telegram_logo.svg.png", "Title", "Lorem Ipsum is simply dummy text of the printing and typesetting industry.")}`
+    for (let i = 0; i < apps.length; i++) {
+        const app = apps[i];
+        displayContent += `\n${appItemView("app_" + i, app.iconUrl, app.title, app.category, "onAppClicked")}`
     }
     replaceInElement("apps-container", displayContent);
+    appsList = apps;
 }
 
 function loadApps(category) {
+    if(stubData) {
+        loadAppsFromStub(category);
+    } else {
+        loadAppsFromServer(category);
+    }
+}
+
+function loadAppsFromStub(category) {
+    const appsResponse = JSON.parse(mockAppListResponse);
+    displayApps(appsResponse.apps);
+}
+
+function loadAppsFromServer(category) {
     fetch(url, {
         method: 'POST',
         headers: {

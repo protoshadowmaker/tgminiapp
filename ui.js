@@ -8,15 +8,21 @@ function pageView(id, content) {
     `;
 }
 
-function appItemView(imgUrl, title, description) {
+function appItemView(id, imgUrl, title, description, onClickCallbackName) {
     return `
-    <div class="item-app">
+    <div id="${id}" class="item-app" onclick="${onClickCallbackName}(this)">
         ${smallRoundedSquareImage(imgUrl)}
         <div class="item-app-content" style="margin-left: 12px">
             <div class="text-title-medium">${title}</div>
             <div class="text-body-medium">${description}</div>
         </div>
     </div>
+    `;
+}
+
+function appDetailsImageView(imgUrl) {
+    return `
+    <img class="image-app-details" src="${imgUrl}"></img>
     `;
 }
 
