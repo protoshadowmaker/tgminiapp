@@ -11,7 +11,6 @@ function appDetailsPage() {
     <p>Wait until the data has been loaded.</p>
     <div id="image-app-details-container" class="image-app-details-container">        
     </div>
-    <button onClick="popPage()">Click me</button>
     `;
 }
 
