@@ -36,5 +36,5 @@ function loadAppDetails(app) {
 
 function loadAppsDetailsFromStub(app) {
     const appResponse = JSON.parse(mockAppDetailsResponse);
-    displayAppDetails(appResponse);
+    displayAppDetails(appResponse[app.id]);
 }
