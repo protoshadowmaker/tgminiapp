@@ -25,7 +25,7 @@ function displayApps(apps) {
     let displayContent = "";
     for (let i = 0; i < apps.length; i++) {
         const app = apps[i];
-        displayContent += `\n${appItemView("app_" + i, app.iconUrl, app.title, app.category, "onAppClicked")}`
+        displayContent += `\n${appItemView("app_" + i, app.iconUrl, app.title, app.category, app.tags, app.rating, app.fav, "onAppClicked")}`
     }
     replaceInElement("apps-container", displayContent);
     appsList = apps;

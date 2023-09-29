@@ -1,6 +1,8 @@
 :root {
     --tg-theme-secondary-bg-color: #FFFFFF;
     --tg-theme-text-color: #000000;
+    --tg-theme-button-color: #007bff;
+    --tg-theme-button-text-color: #FFFFFF;
 }
 
 body {
@@ -58,6 +60,39 @@ body {
 
 .item-app-content {
     flex: 1;
+}
+
+.button-action-primary {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--tg-theme-button-color);
+    color: var(--tg-theme-button-text-color);
+    font-size: 16px;
+    cursor: pointer; 
+}
+
+.button-action-primary:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
+.text-headline-large {
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--tg-theme-text-color);
+}
+
+.text-headline-medium {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--tg-theme-text-color);
+}
+
+
+.text-headline-small {
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--tg-theme-text-color);
 }
 
 .text-title-large {

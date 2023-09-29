@@ -8,13 +8,22 @@ function pageView(id, content) {
     `;
 }
 
-function appItemView(id, imgUrl, title, description, onClickCallbackName) {
+function appItemView(id, imgUrl, title, category, tags, rating, bookmarked, onClickCallbackName) {
+    let categoriesLine = category;
+    for (let i = 0; i < tags.length; i++) {
+        categoriesLine += " • " + tags[i];
+    }
+    let bookmarkTag = "";
+    if(bookmarked) {
+        bookmarkTag = " • Bookmarked";
+    }
     return `
     <div id="${id}" class="item-app" onclick="${onClickCallbackName}(this)">
         ${smallRoundedSquareImage(imgUrl)}
         <div class="item-app-content" style="margin-left: 12px">
             <div class="text-title-medium">${title}</div>
-            <div class="text-body-medium">${description}</div>
+            <div class="text-body-medium" style="margin-top: 4px; margin-bottom: 2px">${categoriesLine}</div>
+            <div class="text-body-medium">${rating} ★${bookmarkTag}</div>
         </div>
     </div>
     `;

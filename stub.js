@@ -9,7 +9,7 @@ const mockAppListResponse = `
                 "title": "Durger King",
                 "rating": "4.2",
                 "category": "Food",
-                "tags": [],
+                "tags": ["Fast food"],
                 "fav": false
             },
             {
