@@ -12,6 +12,7 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: var(--tg-theme-bg-color);
+    user-select: none;
 }
 
 .frame-container {
@@ -86,6 +87,7 @@ body {
     color: var(--tg-theme-button-text-color);
     font-size: 16px;
     cursor: pointer; 
+    outline: none;
 }
 
 .button-action-primary:hover {
@@ -101,6 +103,7 @@ body {
     color: var(--tg-theme-button-color);
     font-size: 16px;
     cursor: pointer; 
+    outline: none;
 }
 
 .button-action-secondary:hover {
