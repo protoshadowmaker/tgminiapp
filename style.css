@@ -1,5 +1,6 @@
 :root {
-    --tg-theme-secondary-bg-color: #FFFFFF;
+    --tg-theme-bg-color: #FFFFFF;
+    --tg-theme-secondary-bg-color: #efefef;
     --tg-theme-text-color: #000000;
     --tg-theme-button-color: #007bff;
     --tg-theme-button-text-color: #FFFFFF;
@@ -10,20 +11,32 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    background-color: var(--tg-theme-secondary-bg-color);
+    background-color: var(--tg-theme-bg-color);
 }
 
 .frame-container {
     width: 100%;
     height: 100%;
-    background-color: var(--tg-theme-secondary-bg-color);
+    background-color: var(--tg-theme-bg-color);
 }
 
 .page-container {
     width: 100%;
     height: 100%;
     position: absolute;
-    background-color: var(--tg-theme-secondary-bg-color);
+    background-color: var(--tg-theme-bg-color);
+}
+
+.container-scroll-h {
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+.container-scroll-h::-webkit-scrollbar { 
+    display: none;
 }
 
 .image {
@@ -67,7 +80,7 @@ body {
 
 .button-action-primary {
     padding: 10px 20px;
-    border: none;
+    border: 2px solid var(--tg-theme-button-color);
     border-radius: 25px;
     background-color: var(--tg-theme-button-color);
     color: var(--tg-theme-button-text-color);
@@ -76,7 +89,22 @@ body {
 }
 
 .button-action-primary:hover {
-    background-color: #0056b3; /* Change background color on hover */
+    filter: brightness(85%);
+}
+
+
+.button-action-secondary {
+    padding: 10px 20px;
+    border: 2px solid var(--tg-theme-button-color);
+    border-radius: 25px;
+    background-color: var(--tg-theme-bg-color);
+    color: var(--tg-theme-button-color);
+    font-size: 16px;
+    cursor: pointer; 
+}
+
+.button-action-secondary:hover {
+    filter: brightness(85%);
 }
 
 .text-headline-large {

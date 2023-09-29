@@ -14,6 +14,7 @@ function appDetailsPage() {
     <div id="image-app-details-container" class="image-app-details-container">        
     </div>
     <button class="button-action-primary" onClick="onOpenAppClicked()">Open app</button>
+    <button class="button-action-secondary" onClick="onOpenAppClicked()">Open app</button>
     `;
 }
 
