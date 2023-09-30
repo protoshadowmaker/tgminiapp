@@ -94,6 +94,10 @@ body {
     filter: brightness(85%);
 }
 
+.button-action-primary:focus{
+    border-color:transparent!important;
+    outline:none;
+}
 
 .button-action-secondary {
     padding: 10px 20px;
@@ -108,6 +112,10 @@ body {
 
 .button-action-secondary:hover {
     filter: brightness(85%);
+}
+
+.button-action-secondary:focus{
+    outline:none;
 }
 
 .text-headline-large {
