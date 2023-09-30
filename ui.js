@@ -43,7 +43,7 @@ function smallRoundedSquareImageView(url) {
 
 function categoryChipView(id, displayValue, onClickCallbackName) {
     return `
-    <button id="category-${id}" class="${cssButtonAction} ${cssButtonActionSecondary} ${cssButtonRipple}" style="margin: 12px 4px" onClick="${onClickCallbackName}('${id}')"">${displayValue.displayText}</button>
+    <button id="category-${id}" class="${cssButtonAction} ${cssButtonActionSecondary} ${cssButtonRipplePrimary}" style="margin: 12px 4px" onClick="${onClickCallbackName}('${id}')"">${displayValue.displayText}</button>
     `;
 }
 

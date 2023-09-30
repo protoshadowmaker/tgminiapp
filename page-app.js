@@ -20,10 +20,10 @@ function appDetailsActionsView() {
     return `
     <div class="container-flex-space-between">
         <div class="container-item-flex-equal" style="padding: 20px 10px">
-            <button id="${idAppDetailsBookmark}" class="${cssButtonAction} ${cssButtonActionPrimary} ${cssButtonRipple}" style="width: 100%;" onClick="onBookmarkClicked()">Bookmark</button>
+            <button id="${idAppDetailsBookmark}" class="${cssButtonAction} ${cssButtonActionPrimary} ${cssButtonRipplePrimary}" style="width: 100%;" onClick="onBookmarkClicked()">Bookmark</button>
         </div>
         <div class="container-item-flex-equal" style="padding: 20px 10px">
-            <button class="${cssButtonAction} ${cssButtonActionPrimary} ${cssButtonRipple}" style="width: 100%" onClick="onOpenAppClicked()">Launch</button>
+            <button class="${cssButtonAction} ${cssButtonActionPrimary} ${cssButtonRipplePrimary}" style="width: 100%" onClick="onOpenAppClicked()">Launch</button>
         </div>
     </div>
     `;
