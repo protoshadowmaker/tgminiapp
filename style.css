@@ -40,6 +40,16 @@ body {
     display: none;
 }
 
+.container-flex-space-between {
+    display: flex; 
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container-item-flex-equal {
+    flex: 1;
+}
+
 .image {
     background-size: cover; 
     background-position: center;
