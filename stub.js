@@ -32,6 +32,12 @@ const mockAppDetailsResponse = `
             "id": "durgerkingbot",
             "iconUrl": "https://raw.githubusercontent.com/protoshadowmaker/tgminiapp/main/assets/icon-durger.jpeg",
             "imageUrl": "https://raw.githubusercontent.com/protoshadowmaker/tgminiapp/main/assets/app-durger.jpg",
+            "screenshots": [
+                "https://raw.githubusercontent.com/protoshadowmaker/tgminiapp/main/assets/app-durger.jpg",
+                "https://raw.githubusercontent.com/protoshadowmaker/tgminiapp/main/assets/app-durger.jpg",
+                "https://raw.githubusercontent.com/protoshadowmaker/tgminiapp/main/assets/app-durger.jpg",
+                "https://raw.githubusercontent.com/protoshadowmaker/tgminiapp/main/assets/app-durger.jpg"
+            ],
             "botAppUrl": "https://t.me/durgerkingbot/menu",
             "title": "Durger King",
             "description": "Use this bot to order fictional fast food – the only fast food that is good for your health!",
@@ -47,6 +53,11 @@ const mockAppDetailsResponse = `
             "id": "wallet",
             "iconUrl": "https://raw.githubusercontent.com/protoshadowmaker/tgminiapp/main/assets/icon-wallet.jpeg",
             "imageUrl": "https://raw.githubusercontent.com/protoshadowmaker/tgminiapp/main/assets/app-wallet.jpg",
+            "screenshots": [
+                "https://raw.githubusercontent.com/protoshadowmaker/tgminiapp/main/assets/app-wallet.jpg",
+                "https://raw.githubusercontent.com/protoshadowmaker/tgminiapp/main/assets/app-wallet.jpg",
+                "https://raw.githubusercontent.com/protoshadowmaker/tgminiapp/main/assets/app-wallet.jpg"
+            ],
             "botAppUrl": "https://t.me/wallet/start",
             "title": "Wallet",
             "description": "Purchase cryptocurrency by bank card, exchange, and transfer to other wallets.",

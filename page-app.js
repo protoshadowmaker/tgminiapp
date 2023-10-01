@@ -4,27 +4,34 @@ const idAppDetailsBookmark = "app-details-bookmark";
 let selectedAppDetails;
 
 function displayAppPage(app) {
-    pushPage("app-page", appDetailsPage());
+    pushPage("app-page", appDetailsPage(app));
     loadAppDetails(app);
 }
 
-function appDetailsPage() {
+function appDetailsPage(app) {
     return `
-    <div id="image-app-details-container" class="image-app-details-container">        
-    </div>
+    ${appDetailsItemView(app.id, app.iconUrl, app.title, app.category, app.tags)}
     ${appDetailsActionsView()}
+    ${appScreenshotsView()}
     `;
 }
 
 function appDetailsActionsView() {
     return `
-    <div class="container-flex-space-between">
-        <div class="container-item-flex-equal" style="padding: 20px 10px">
+    <div class="${cssContainerFlexSpaceBetween}">
+        <div class="${cssContainerItemFlexEqual}" style="padding: 20px 10px">
             <button id="${idAppDetailsBookmark}" class="${cssButtonAction} ${cssButtonActionPrimary} ${cssButtonRipplePrimary}" style="width: 100%;" onClick="onBookmarkClicked()">Bookmark</button>
         </div>
-        <div class="container-item-flex-equal" style="padding: 20px 10px">
+        <div class="${cssContainerItemFlexEqual}" style="padding: 20px 10px">
             <button class="${cssButtonAction} ${cssButtonActionPrimary} ${cssButtonRipplePrimary}" style="width: 100%" onClick="onOpenAppClicked()">Launch</button>
         </div>
+    </div>
+    `;
+}
+
+function appScreenshotsView() {
+    return `
+    <div id="app-details-screenshots" class="${cssImageAppScreenshotListContainer} ${cssContainerScrollH}">
     </div>
     `;
 }
@@ -41,6 +48,7 @@ function updateBookmarkState() {
         addClassToElement(idAppDetailsBookmark, cssButtonActionPrimary);
         replaceInElement(idAppDetailsBookmark, "Bookmark")
     }
+    window.Telegram.WebApp.HapticFeedback.selectionChanged();
 }
 
 function onOpenAppClicked() {
@@ -59,6 +67,15 @@ function displayAppDetails(appDetails) {
     selectedAppDetails = appDetails;
     replaceInElement("image-app-details-container", appDetailsImageView(appDetails.imageUrl));
     updateBookmarkState();
+    displayScreenshots(appDetails);
+}
+
+function displayScreenshots(appDetails) {
+    let screenshots = "";
+    for (const screenshotUrl of appDetails.screenshots) {
+        screenshots += `\n${screenshotPreviewImageView(screenshotUrl)}`;
+    }
+    replaceInElement("app-details-screenshots", screenshots);
 }
 
 function updateAppDetails(appDetails) {

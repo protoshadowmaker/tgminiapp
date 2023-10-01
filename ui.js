@@ -2,31 +2,47 @@
 
 function pageView(id, content) {
     return `
-    <div id="${id}" class="page-container">
+    <div id="${id}" class="${cssPageContainer}">
         ${content}
     </div>
     `;
 }
 
 function appItemView(id, imgUrl, title, category, tags, rating, bookmarked, onClickCallbackName) {
-    let categoriesLine = category;
-    for (let i = 0; i < tags.length; i++) {
-        categoriesLine += " • " + tags[i];
-    }
     let bookmarkTag = "";
     if(bookmarked) {
         bookmarkTag = " • Bookmarked";
     }
     return `
-    <div id="app-${id}" class="item-app" onclick="${onClickCallbackName}(${id})">
+    <div id="app-${id}" class="${cssItemApp}" onclick="${onClickCallbackName}(${id})">
         ${smallRoundedSquareImageView(imgUrl)}
-        <div class="item-app-content" style="margin-left: 12px">
-            <div class="text-title-medium">${title}</div>
-            <div class="text-body-medium" style="margin-top: 4px; margin-bottom: 2px">${categoriesLine}</div>
-            <div class="text-body-medium">${rating} ★${bookmarkTag}</div>
+        <div class="${cssItemAppContent}" style="margin-left: 12px">
+            <div class="${cssTextTitleMedium}">${title}</div>
+            <div class="${cssTextBodyMedium}" style="margin-top: 4px; margin-bottom: 2px">${buildCategoriesLine(category, tags)}</div>
+            <div class="${cssTextBodyMedium}">${rating} ★${bookmarkTag}</div>
         </div>
     </div>
     `;
+}
+
+function appDetailsItemView(id, imgUrl, title, category, tags) {
+    return `
+    <div id="app-details-${id}" class="${cssItemApp}">
+        ${mediumRoundedSquareImageView(imgUrl)}
+        <div class="${cssItemAppContent}" style="margin-left: 12px">
+            <div class="${cssTextTitleLarge}">${title}</div>
+            <div class="${cssTextBodyLarge}" style="margin-top: 8px; margin-bottom: 2px">${buildCategoriesLine(category, tags)}</div>
+        </div>
+    </div>
+    `;
+}
+
+function buildCategoriesLine(category, tags) {
+    let categoriesLine = category;
+    for (let i = 0; i < tags.length; i++) {
+        categoriesLine += " • " + tags[i];
+    }
+    return categoriesLine;
 }
 
 function appDetailsImageView(imgUrl) {
@@ -37,7 +53,20 @@ function appDetailsImageView(imgUrl) {
 
 function smallRoundedSquareImageView(url) {
     return `
-    <div class="image image-small image-rounded" style="background-image: url('${url}')"></div>
+    <div class="${cssImage} ${cssImageSmall} ${cssImageRounded}" style="background-image: url('${url}')"></div>
+    `;
+}
+
+
+function mediumRoundedSquareImageView(url) {
+    return `
+    <div class="${cssImage} ${cssImageMedium} ${cssImageRounded}" style="background-image: url('${url}')"></div>
+    `;
+}
+
+function screenshotPreviewImageView(url) {
+    return `
+    <div class="${cssImage} ${cssImageAppScreenshotItemContainer} ${cssImageRounded10}" style="background-image: url('${url}')"></div>
     `;
 }
 
@@ -45,6 +74,10 @@ function categoryChipView(id, displayValue, onClickCallbackName) {
     return `
     <button id="category-${id}" class="${cssButtonAction} ${cssButtonActionSecondary} ${cssButtonRipplePrimary}" style="margin: 12px 4px" onClick="${onClickCallbackName}('${id}')"">${displayValue.displayText}</button>
     `;
+}
+
+function ratingBar() {
+    return "☆ ★"
 }
 
 function categoryBarView(id, categories, onClickCallbackName) {
