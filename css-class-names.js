@@ -15,6 +15,7 @@ const cssButtonAction = "button-action";
 const cssButtonActionPrimary = "button-action-primary";
 const cssButtonActionSecondary = "button-action-secondary";
 const cssButtonRipplePrimary = "button-ripple-primary";
+const cssButtonRippleSecondary = "button-ripple-secondary";
 const cssTextHeadlineLarge = "text-headline-large";
 const cssTextHeadlineMedium = "text-headline-medium";
 const cssTextHeadlineSmall = "text-headline-small";

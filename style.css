@@ -115,19 +115,21 @@ body {
 }
 
 .button-ripple-primary {
-    background-position: center;
-    transition: background 0.8s;
 }
 
 .button-ripple-primary:hover {
-    background: var(--tg-theme-button-color) radial-gradient(circle, transparent 1%, var(--tg-theme-button-color) 1%) center/15000%;
-    filter: brightness(85%);
 }
 
 .button-ripple-primary:active {
-    background-color: var(--tg-theme-button-color);
-    background-size: 100%;
-    transition: background 0s;
+}
+
+.button-ripple-secondary {
+}
+
+.button-ripple-secondary:hover {
+}
+
+.button-ripple-secondary:active {
 }
 
 .text-headline-large {
