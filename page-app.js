@@ -13,6 +13,7 @@ function appDetailsPage(app) {
     ${appDetailsItemView(app.id, app.iconUrl, app.title, app.category, app.tags)}
     ${appDetailsActionsView()}
     ${appScreenshotsView()}
+    ${ratingBarView("rating-bar", "onRatingClicked")}
     `;
 }
 
@@ -31,7 +32,7 @@ function appDetailsActionsView() {
 
 function appScreenshotsView() {
     return `
-    <div id="app-details-screenshots" class="${cssImageAppScreenshotListContainer}">
+    <div id="app-details-screenshots" class="${cssContainerScrollHScreenshotListPreview}">
     </div>
     `;
 }
@@ -51,6 +52,15 @@ function updateBookmarkState() {
     window.Telegram.WebApp.HapticFeedback.selectionChanged();
 }
 
+function updateRatingState() {
+    if(!selectedAppDetails) {
+        return;
+    }
+    for(let i = 1; i<=selectedAppDetails.userRating; i++) {
+        replaceInElement(`app_rating_${i}`, "★");
+    }
+}
+
 function onOpenAppClicked() {
     if (selectedAppDetails) {
         window.Telegram.WebApp.openTelegramLink(selectedAppDetails.botAppUrl);
@@ -63,10 +73,22 @@ function onBookmarkClicked() {
     }
 }
 
+function onRatingClicked(value) {
+    if(!window.Telegram.WebApp.initDataUnsafe.user.is_premium) {
+        window.Telegram.WebApp.showAlert("Unfortunately, only premium Telegram users can rate apps. This makes our store more reliable and protected from rating scoring by bots.")
+        window.Telegram.WebApp.HapticFeedback.selectionChanged("warning");
+        return;
+    }
+    if(selectedAppDetails) {
+        
+    }
+}
+
 function displayAppDetails(appDetails) {
     selectedAppDetails = appDetails;
     replaceInElement("image-app-details-container", appDetailsImageView(appDetails.imageUrl));
     updateBookmarkState();
+    updateRatingState();
     displayScreenshots(appDetails);
 }
 
@@ -81,6 +103,7 @@ function displayScreenshots(appDetails) {
 function updateAppDetails(appDetails) {
     selectedAppDetails = appDetails;
     updateBookmarkState();
+    updateRatingState();
 }
 
 // Network

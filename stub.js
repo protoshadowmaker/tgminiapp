@@ -43,7 +43,7 @@ const mockAppDetailsResponse = `
             "description": "Use this bot to order fictional fast food – the only fast food that is good for your health!",
             "rating": "4.2",
             "rateCount": 6,
-            "myRating": -1,
+            "userRating": 3,
             "category": "Food",
             "tags": ["Fast food"],
             "fav": false
@@ -63,7 +63,7 @@ const mockAppDetailsResponse = `
             "description": "Purchase cryptocurrency by bank card, exchange, and transfer to other wallets.",
             "rating": "4.9",
             "rateCount": 12,
-            "myRating": -1,
+            "userRating": -1,
             "category": "Finance",
             "tags": [ "Wallet" ],
             "fav": false

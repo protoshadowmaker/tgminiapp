@@ -17,7 +17,7 @@ class AppInfo {
 }
 
 class AppDetailsInfo {
-    constructor(id, iconUrl, imageUrl, screenshots, botAppUrl, title, description, rating, rateCount, myRating, category, tags, fav) {
+    constructor(id, iconUrl, imageUrl, screenshots, botAppUrl, title, description, rating, rateCount, userRating, category, tags, fav) {
         this.id = id;
         this.iconUrl = iconUrl;
         this.imageUrl = imageUrl;
@@ -27,7 +27,7 @@ class AppDetailsInfo {
         this.description = description;
         this.rating = rating;
         this.rateCount = rateCount;
-        this.myRating = myRating;
+        this.userRating = userRating;
         this.category = category;
         this.tags = tags;
         this.fav = fav;

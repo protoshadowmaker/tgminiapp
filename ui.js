@@ -66,7 +66,7 @@ function mediumRoundedSquareImageView(url) {
 
 function screenshotPreviewImageView(url) {
     return `
-    <img class="${cssImageAppScreenshotItemImage}" src="${url}"></div>
+    <img class="${cssImageAppScreenshotItemImage} ${cssImageRounded20px}" src="${url}"></div>
     `;
 }
 
@@ -76,8 +76,21 @@ function categoryChipView(id, displayValue, onClickCallbackName) {
     `;
 }
 
-function ratingBar() {
-    return "☆ ★"
+function ratingBarView(id, onClickCallbackName) {
+    "☆ ★"
+    let ratingContent = "";
+    for(let i = 1; i<= 5; i++) {
+        ratingContent += `
+        <div class="${cssContainerItemFlexEqual} ${cssRatingBarItem}" style="padding: 20px 10px">
+            <div id="app_rating_${i}" class="" style="width: 100%;" onClick="${onClickCallbackName}('${i}')"">☆</div>
+        </div>
+        `;
+    }
+    return `
+    <div id="${id}" class="${cssContainerFlexSpaceBetween}">
+        ${ratingContent}
+    </div>
+    `;
 }
 
 function categoryBarView(id, categories, onClickCallbackName) {
@@ -89,7 +102,7 @@ function categoryBarView(id, categories, onClickCallbackName) {
         `;
     }
     return `
-    <div id="${id}" class="${cssContainerScrollH}">
+    <div id="${id}" class="${cssContainerScrollHCategories}">
         ${categoriesLine}
     </div>
     `;
