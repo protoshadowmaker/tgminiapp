@@ -89,23 +89,26 @@ body {
 }
 
 .image-app-screenshot-list-container {
+    align-items: flex-start;
     display: flex;
-    padding: 0px 10px;
-    gap: 10px;
-    align-items: center;
-    width: 100% - 20xp;
+    flex-wrap: nowrap;
+    list-style: none;
+    overflow-x: scroll;
+    width: 100% - 32xp;
+    padding: 0px 16px;
+    gap: 16px;
     height: min(400px, 100vh / 2);
 }
 
-.image-app-screenshot-item-container {
-    height: 100%;
-    aspect-ratio: 1 / 2;
-    overflow: hidden;
+
+.image-app-screenshot-list-container::-webkit-scrollbar { 
+    display: none;
 }
 
 .image-app-screenshot-item-image {
     width: 100%;
     height: 100%;
+    aspect-ratio: 3 / 4;
     object-fit: cover;
 }
 

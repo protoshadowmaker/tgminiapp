@@ -31,7 +31,7 @@ function appDetailsActionsView() {
 
 function appScreenshotsView() {
     return `
-    <div id="app-details-screenshots" class="${cssImageAppScreenshotListContainer} ${cssContainerScrollH}">
+    <div id="app-details-screenshots" class="${cssImageAppScreenshotListContainer}">
     </div>
     `;
 }

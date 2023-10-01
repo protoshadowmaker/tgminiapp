@@ -66,9 +66,7 @@ function mediumRoundedSquareImageView(url) {
 
 function screenshotPreviewImageView(url) {
     return `
-    <div class=${cssImageAppScreenshotItemContainer}>
-        <img class="${cssImageAppScreenshotItemImage}" src="${url}"></div>
-    </div>
+    <img class="${cssImageAppScreenshotItemImage}" src="${url}"></div>
     `;
 }
 
