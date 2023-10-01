@@ -75,7 +75,7 @@ function onBookmarkClicked() {
 
 function onRatingClicked(value) {
     if(!window.Telegram.WebApp.initDataUnsafe.user.is_premium) {
-        window.Telegram.WebApp.showAlert("Unfortunately, only premium Telegram users can rate apps. This makes our store more reliable and protected from rating scoring by bots.")
+        window.Telegram.WebApp.showAlert("Unfortunately, only premium Telegram users can rate apps.\nThis makes our store more reliable and protected from rating scoring by bots.")
         window.Telegram.WebApp.HapticFeedback.selectionChanged("warning");
         return;
     }
