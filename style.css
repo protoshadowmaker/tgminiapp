@@ -35,6 +35,7 @@ body {
 .container-scroll-h {
     width: 100% - 20px;
     padding: 10px;
+    align-items: center;
     white-space: nowrap;
     overflow-x: auto;
     -ms-overflow-style: none; 
@@ -88,15 +89,26 @@ body {
 }
 
 .image-app-screenshot-list-container {
-    width: 100%;
+    display: flex;
+    padding: 0px 10px;
+    gap: 10px;
+    align-items: center;
+    width: 100% - 20xp;
     height: min(400px, 100vh / 2);
 }
 
 .image-app-screenshot-item-container {
-    position: relative;
     height: 100%;
     aspect-ratio: 1 / 2;
+    overflow: hidden;
 }
+
+.image-app-screenshot-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 .item-app {
     display: flex;

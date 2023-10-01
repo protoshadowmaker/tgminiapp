@@ -12,6 +12,7 @@ const cssImageMedium = "image-medium";
 const cssImageFullSizeParent = "image-full-size-parent";
 const cssImageAppScreenshotListContainer = "image-app-screenshot-list-container";
 const cssImageAppScreenshotItemContainer = "image-app-screenshot-item-container";
+const cssImageAppScreenshotItemImage = "image-app-screenshot-item-image";
 const cssItemApp = "item-app";
 const cssItemAppContent = "item-app-content";
 const cssButtonAction = "button-action";

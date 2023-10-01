@@ -66,13 +66,15 @@ function mediumRoundedSquareImageView(url) {
 
 function screenshotPreviewImageView(url) {
     return `
-    <div class="${cssImage} ${cssImageAppScreenshotItemContainer} ${cssImageRounded10}" style="background-image: url('${url}')"></div>
+    <div class=${cssImageAppScreenshotItemContainer}>
+        <img class="${cssImageAppScreenshotItemImage}" src="${url}"></div>
+    </div>
     `;
 }
 
 function categoryChipView(id, displayValue, onClickCallbackName) {
     return `
-    <button id="category-${id}" class="${cssButtonAction} ${cssButtonActionSecondary} ${cssButtonRipplePrimary}" style="margin: 12px 4px" onClick="${onClickCallbackName}('${id}')"">${displayValue.displayText}</button>
+    <button id="category-${id}" class="${cssButtonAction} ${cssButtonActionSecondary} ${cssButtonRipplePrimary}" onClick="${onClickCallbackName}('${id}')"">${displayValue.displayText}</button>
     `;
 }
 
@@ -89,7 +91,7 @@ function categoryBarView(id, categories, onClickCallbackName) {
         `;
     }
     return `
-    <div id="${id}" class="container-scroll-h">
+    <div id="${id}" class="${cssContainerScrollH}">
         ${categoriesLine}
     </div>
     `;
